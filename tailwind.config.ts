@@ -12,15 +12,18 @@ const config: Config = {
     themes: [
       {
         mytheme: {
-          primary: "#dd6e99",
-          secondary: "#fcc4d5",
-          accent: "#f26a9e",
-          neutral: "#1a1e23",
-          "base-100": "#322442",
-          info: "#aac6e9",
-          success: "#219161",
-          warning: "#936a0b",
-          error: "#f73b48",
+          primary: "#e08031",
+          secondary: "#1461e5",
+          accent: "#ef69a5",
+          neutral: "#1e1b28",
+          "base-100": "#e6e4e7",
+          info: "#a4daef",
+          success: "#33cca1",
+          warning: "#d19c0a",
+          error: "#ed5e8c",
+          // body: {
+          //   "background-color": "#aaa",
+          // },
         },
       },
     ],
