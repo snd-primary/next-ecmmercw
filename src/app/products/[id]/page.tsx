@@ -1,6 +1,6 @@
 import PriceTag from "@/components/PriceTag";
 import { prisma } from "@/lib/db/prisma";
-import { Metadata } from "next";
+import { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { cache } from "react";
@@ -20,8 +20,9 @@ const getProduct = cache(async (id: string) => {
 });
 
 export async function generateMetaData({
-  params: { id },
+  params,
 }: ProductPageProps): Promise<Metadata> {
+  const id = params.id;
   const product = await getProduct(id);
   return {
     title: product.name + "- Toreharose",
@@ -32,9 +33,8 @@ export async function generateMetaData({
   };
 }
 
-export default async function ProductPage({
-  params: { id },
-}: ProductPageProps) {
+export default async function ProductPage({ params }: ProductPageProps) {
+  const id = params.id;
   const product = await getProduct(id);
   return (
     <div className="lg:item-center flex flex-col gap-4 lg:flex-row">
